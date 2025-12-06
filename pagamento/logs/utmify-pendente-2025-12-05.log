@@ -1,0 +1,1758 @@
+[2025-12-05 00:13:15] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"a45c1a37-c8da-47fb-8521-c7107efa2228\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 00:13:15\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Giovana razera\",\"email\":\"giovana.razera@outlook.com\",\"phone\":\"3198241848\",\"document\":\"80561030405\",\"country\":\"BR\",\"ip\":\"2804:14c:81:8bed:b075:6a62:4c3b:58a0\"},\"products\":[{\"id\":\"PROD_6932239b1096e\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":{\"utm_source\":\"tiktok\",\"utm_medium\":\"Ad%20group%2020251201014611\",\"utm_campaign\":\"Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20%5BTKT%20PAY%204K%5D%20%5BCTV3%20E1%5D|1850424521318401\",\"utm_content\":\"%5BTKT%20PAY%204k%5D%20%5BCTV3%20E1%5D_001\",\"utm_term\":\"TikTok\"},\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 00:13:15] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "a45c1a37-c8da-47fb-8521-c7107efa2228",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:13:15",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Giovana razera",
+        "email": "giovana.razera@outlook.com",
+        "phone": "3198241848",
+        "document": "80561030405",
+        "country": "BR",
+        "ip": "2804:14c:81:8bed:b075:6a62:4c3b:58a0"
+    },
+    "products": [
+        {
+            "id": "PROD_6932239b1096e",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "utm_source": "tiktok",
+        "utm_medium": "Ad%20group%2020251201014611",
+        "utm_campaign": "Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20%5BTKT%20PAY%204K%5D%20%5BCTV3%20E1%5D|1850424521318401",
+        "utm_content": "%5BTKT%20PAY%204k%5D%20%5BCTV3%20E1%5D_001",
+        "utm_term": "TikTok"
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:13:15] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "a45c1a37-c8da-47fb-8521-c7107efa2228",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:13:15",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Giovana razera",
+        "email": "giovana.razera@outlook.com",
+        "phone": null,
+        "document": "80561030405",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_6932239b1096e",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": "tiktok",
+        "utm_campaign": "Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20Copy%201%20of%20%5BTKT%20PAY%204K%5D%20%5BCTV3%20E1%5D|1850424521318401",
+        "utm_medium": "Ad%20group%2020251201014611",
+        "utm_content": "%5BTKT%20PAY%204k%5D%20%5BCTV3%20E1%5D_001",
+        "utm_term": "TikTok",
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:13:15] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 00:13:15] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 00:28:05] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"7526c8fd-73ec-4cd9-a035-2a6572767871\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 00:28:05\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Gustavo Santos Lopes\",\"email\":\"clienteteste@gmail.com\",\"phone\":\"11999999999\",\"document\":\"86236483582\",\"country\":\"BR\",\"ip\":\"2001:ee0:425e:3390:4098:b338:d48f:3b2a\"},\"products\":[{\"id\":\"PROD_69322715aa419\",\"name\":\"Produto 24.5\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2450}],\"trackingParameters\":{\"utm_medium\":\"Ad group 20251201014611|1850448775053457\"},\"commission\":{\"totalPriceInCents\":2450,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2450},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 00:28:05] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "7526c8fd-73ec-4cd9-a035-2a6572767871",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:28:05",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Gustavo Santos Lopes",
+        "email": "clienteteste@gmail.com",
+        "phone": "11999999999",
+        "document": "86236483582",
+        "country": "BR",
+        "ip": "2001:ee0:425e:3390:4098:b338:d48f:3b2a"
+    },
+    "products": [
+        {
+            "id": "PROD_69322715aa419",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": {
+        "utm_medium": "Ad group 20251201014611|1850448775053457"
+    },
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:28:05] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "7526c8fd-73ec-4cd9-a035-2a6572767871",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:28:05",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Gustavo Santos Lopes",
+        "email": "clienteteste@gmail.com",
+        "phone": null,
+        "document": "86236483582",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69322715aa419",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": "Ad group 20251201014611|1850448775053457",
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:28:05] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 00:28:05] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 00:47:13] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"0b84ebeb-e414-46cc-b6bf-342409701265\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 00:47:13\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Ana Oliveira Oliveira\",\"email\":\"ana.oliveira.oliveira@gmail.com\",\"phone\":\"8196724516\",\"document\":\"79077432060\",\"country\":\"BR\",\"ip\":\"181.232.221.55\"},\"products\":[{\"id\":\"PROD_69322b9185111\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":{\"utm_source\":\"tiktok\",\"utm_medium\":\"Ad%20group%2020251203040402|1850575472438354\",\"utm_campaign\":\"Copy%201%20of%20%5BCTV7%20L5%5D|1850575472437298\",\"utm_content\":\"Ad%20name2025-12-03%2016%3A06%3A04_001|1850575541674082\",\"utm_term\":\"TikTok\"},\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 00:47:13] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "0b84ebeb-e414-46cc-b6bf-342409701265",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:47:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Ana Oliveira Oliveira",
+        "email": "ana.oliveira.oliveira@gmail.com",
+        "phone": "8196724516",
+        "document": "79077432060",
+        "country": "BR",
+        "ip": "181.232.221.55"
+    },
+    "products": [
+        {
+            "id": "PROD_69322b9185111",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "utm_source": "tiktok",
+        "utm_medium": "Ad%20group%2020251203040402|1850575472438354",
+        "utm_campaign": "Copy%201%20of%20%5BCTV7%20L5%5D|1850575472437298",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_001|1850575541674082",
+        "utm_term": "TikTok"
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:47:13] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "0b84ebeb-e414-46cc-b6bf-342409701265",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:47:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Ana Oliveira Oliveira",
+        "email": "ana.oliveira.oliveira@gmail.com",
+        "phone": null,
+        "document": "79077432060",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69322b9185111",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": "tiktok",
+        "utm_campaign": "Copy%201%20of%20%5BCTV7%20L5%5D|1850575472437298",
+        "utm_medium": "Ad%20group%2020251203040402|1850575472438354",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_001|1850575541674082",
+        "utm_term": "TikTok",
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:47:13] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 00:47:13] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 00:47:14] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"5347089a-e6f6-42c5-a789-dc48feb09c64\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 00:47:14\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Maria Souza Santos\",\"email\":\"maria.souza.santos@gmail.com\",\"phone\":\"7197562651\",\"document\":\"73020554594\",\"country\":\"BR\",\"ip\":\"181.232.221.55\"},\"products\":[{\"id\":\"PROD_69322b923880a\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":{\"utm_source\":\"tiktok\",\"utm_medium\":\"Ad%20group%2020251203040402|1850575472438354\",\"utm_campaign\":\"Copy%201%20of%20%5BCTV7%20L5%5D|1850575472437298\",\"utm_content\":\"Ad%20name2025-12-03%2016%3A06%3A04_001|1850575541674082\",\"utm_term\":\"TikTok\"},\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 00:47:14] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "5347089a-e6f6-42c5-a789-dc48feb09c64",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:47:14",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Souza Santos",
+        "email": "maria.souza.santos@gmail.com",
+        "phone": "7197562651",
+        "document": "73020554594",
+        "country": "BR",
+        "ip": "181.232.221.55"
+    },
+    "products": [
+        {
+            "id": "PROD_69322b923880a",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "utm_source": "tiktok",
+        "utm_medium": "Ad%20group%2020251203040402|1850575472438354",
+        "utm_campaign": "Copy%201%20of%20%5BCTV7%20L5%5D|1850575472437298",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_001|1850575541674082",
+        "utm_term": "TikTok"
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:47:14] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "5347089a-e6f6-42c5-a789-dc48feb09c64",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 00:47:14",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Souza Santos",
+        "email": "maria.souza.santos@gmail.com",
+        "phone": null,
+        "document": "73020554594",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69322b923880a",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": "tiktok",
+        "utm_campaign": "Copy%201%20of%20%5BCTV7%20L5%5D|1850575472437298",
+        "utm_medium": "Ad%20group%2020251203040402|1850575472438354",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_001|1850575541674082",
+        "utm_term": "TikTok",
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 00:47:14] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 00:47:14] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 01:05:03] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"8b598693-88c5-46a5-9528-fa1643aba7bf\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 01:05:03\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Giovana de Souza Bernardo\",\"email\":\"giovana.de.souza.bernardo@yahoo.com.br\",\"phone\":\"8199352449\",\"document\":\"16105625936\",\"country\":\"BR\",\"ip\":\"179.108.160.245\"},\"products\":[{\"id\":\"PROD_69322fbf2b478\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":{\"utm_source\":\"tiktok\",\"utm_medium\":\"Ad group 20251203040402|1850514871445569\",\"utm_campaign\":\"[CTV1 L4]|1850514871436465\",\"utm_content\":\"Ad name2025-12-03 16:06:04_001|1850515197680737\",\"utm_term\":\"TikTok\"},\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 01:05:03] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "8b598693-88c5-46a5-9528-fa1643aba7bf",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 01:05:03",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Giovana de Souza Bernardo",
+        "email": "giovana.de.souza.bernardo@yahoo.com.br",
+        "phone": "8199352449",
+        "document": "16105625936",
+        "country": "BR",
+        "ip": "179.108.160.245"
+    },
+    "products": [
+        {
+            "id": "PROD_69322fbf2b478",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "utm_source": "tiktok",
+        "utm_medium": "Ad group 20251203040402|1850514871445569",
+        "utm_campaign": "[CTV1 L4]|1850514871436465",
+        "utm_content": "Ad name2025-12-03 16:06:04_001|1850515197680737",
+        "utm_term": "TikTok"
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 01:05:03] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "8b598693-88c5-46a5-9528-fa1643aba7bf",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 01:05:03",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Giovana de Souza Bernardo",
+        "email": "giovana.de.souza.bernardo@yahoo.com.br",
+        "phone": null,
+        "document": "16105625936",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69322fbf2b478",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": "tiktok",
+        "utm_campaign": "[CTV1 L4]|1850514871436465",
+        "utm_medium": "Ad group 20251203040402|1850514871445569",
+        "utm_content": "Ad name2025-12-03 16:06:04_001|1850515197680737",
+        "utm_term": "TikTok",
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 01:05:03] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 01:05:03] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 01:19:59] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"b853ab7b-278c-420a-8234-c052137d6a10\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 01:19:58\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Joao Martins Martins\",\"email\":\"joao.martins.martins@hotmail.com\",\"phone\":\"2192347208\",\"document\":\"34990233425\",\"country\":\"BR\",\"ip\":\"186.235.145.47\"},\"products\":[{\"id\":\"PROD_6932333ed5d7a\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 01:19:59] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "b853ab7b-278c-420a-8234-c052137d6a10",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 01:19:58",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Joao Martins Martins",
+        "email": "joao.martins.martins@hotmail.com",
+        "phone": "2192347208",
+        "document": "34990233425",
+        "country": "BR",
+        "ip": "186.235.145.47"
+    },
+    "products": [
+        {
+            "id": "PROD_6932333ed5d7a",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 01:19:59] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "b853ab7b-278c-420a-8234-c052137d6a10",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 01:19:59",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Joao Martins Martins",
+        "email": "joao.martins.martins@hotmail.com",
+        "phone": null,
+        "document": "34990233425",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_6932333ed5d7a",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 01:19:59] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 01:19:59] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 02:14:13] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"0fa4d35a-b8a3-4b5a-af4f-89545d076e77\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 02:14:13\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Tubbv\",\"email\":\"tubbv@outlook.com\",\"phone\":\"1199478165\",\"document\":\"48755053882\",\"country\":\"BR\",\"ip\":\"191.201.65.228\"},\"products\":[{\"id\":\"PROD_69323ff50bfb5\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 02:14:13] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "0fa4d35a-b8a3-4b5a-af4f-89545d076e77",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 02:14:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Tubbv",
+        "email": "tubbv@outlook.com",
+        "phone": "1199478165",
+        "document": "48755053882",
+        "country": "BR",
+        "ip": "191.201.65.228"
+    },
+    "products": [
+        {
+            "id": "PROD_69323ff50bfb5",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 02:14:13] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "0fa4d35a-b8a3-4b5a-af4f-89545d076e77",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 02:14:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Tubbv",
+        "email": "tubbv@outlook.com",
+        "phone": null,
+        "document": "48755053882",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69323ff50bfb5",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 02:14:13] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 02:14:13] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 02:17:13] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"d2e43a9a-6c03-4356-a269-e56ac0b6f671\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 02:17:13\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Joao Gomes Silva\",\"email\":\"joao.gomes.silva@icloud.com\",\"phone\":\"8190493553\",\"document\":\"22193514674\",\"country\":\"BR\",\"ip\":\"179.108.145.148\"},\"products\":[{\"id\":\"PROD_693240a90b3c4\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 02:17:13] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "d2e43a9a-6c03-4356-a269-e56ac0b6f671",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 02:17:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Joao Gomes Silva",
+        "email": "joao.gomes.silva@icloud.com",
+        "phone": "8190493553",
+        "document": "22193514674",
+        "country": "BR",
+        "ip": "179.108.145.148"
+    },
+    "products": [
+        {
+            "id": "PROD_693240a90b3c4",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 02:17:13] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "d2e43a9a-6c03-4356-a269-e56ac0b6f671",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 02:17:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Joao Gomes Silva",
+        "email": "joao.gomes.silva@icloud.com",
+        "phone": null,
+        "document": "22193514674",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_693240a90b3c4",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 02:17:13] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 02:17:13] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 02:27:36] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"106b917b-2e03-4004-bc58-9aa5f25241e3\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 02:27:36\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Camila\",\"email\":\"camila@gmail.com\",\"phone\":\"1198682095\",\"document\":\"44222417297\",\"country\":\"BR\",\"ip\":\"2804:2448:8095:3100:6d17:3ac8:bf68:5866\"},\"products\":[{\"id\":\"PROD_69324318c7706\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":{\"utm_source\":\"tiktok\",\"utm_medium\":\"Ad%20group%2020251203040402|1850517064515714\",\"utm_campaign\":\"%5BCTV1%20E1%5D|1850517064514802\",\"utm_content\":\"Ad%20name2025-12-03%2016%3A06%3A04_001|1850517172060354\",\"utm_term\":\"TikTok\"},\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 02:27:36] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "106b917b-2e03-4004-bc58-9aa5f25241e3",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 02:27:36",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Camila",
+        "email": "camila@gmail.com",
+        "phone": "1198682095",
+        "document": "44222417297",
+        "country": "BR",
+        "ip": "2804:2448:8095:3100:6d17:3ac8:bf68:5866"
+    },
+    "products": [
+        {
+            "id": "PROD_69324318c7706",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "utm_source": "tiktok",
+        "utm_medium": "Ad%20group%2020251203040402|1850517064515714",
+        "utm_campaign": "%5BCTV1%20E1%5D|1850517064514802",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_001|1850517172060354",
+        "utm_term": "TikTok"
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 02:27:36] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "106b917b-2e03-4004-bc58-9aa5f25241e3",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 02:27:36",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Camila",
+        "email": "camila@gmail.com",
+        "phone": null,
+        "document": "44222417297",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69324318c7706",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": "tiktok",
+        "utm_campaign": "%5BCTV1%20E1%5D|1850517064514802",
+        "utm_medium": "Ad%20group%2020251203040402|1850517064515714",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_001|1850517172060354",
+        "utm_term": "TikTok",
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 02:27:36] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 02:27:36] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 03:23:48] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"c0ce4199-83cf-4fa8-89f1-d8feb19c700d\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 03:23:47\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Alice Fernandes Barbosa\",\"email\":\"clienteteste@gmail.com\",\"phone\":\"11999999999\",\"document\":\"38270392405\",\"country\":\"BR\",\"ip\":\"168.197.230.245\"},\"products\":[{\"id\":\"PROD_69325043c76d1\",\"name\":\"Produto 24.5\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2450}],\"trackingParameters\":{\"utm_medium\":\"Ad group 20251201014611|1850449224682770\"},\"commission\":{\"totalPriceInCents\":2450,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2450},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 03:23:48] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "c0ce4199-83cf-4fa8-89f1-d8feb19c700d",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 03:23:47",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Alice Fernandes Barbosa",
+        "email": "clienteteste@gmail.com",
+        "phone": "11999999999",
+        "document": "38270392405",
+        "country": "BR",
+        "ip": "168.197.230.245"
+    },
+    "products": [
+        {
+            "id": "PROD_69325043c76d1",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": {
+        "utm_medium": "Ad group 20251201014611|1850449224682770"
+    },
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 03:23:48] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "c0ce4199-83cf-4fa8-89f1-d8feb19c700d",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 03:23:48",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Alice Fernandes Barbosa",
+        "email": "clienteteste@gmail.com",
+        "phone": null,
+        "document": "38270392405",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69325043c76d1",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": "Ad group 20251201014611|1850449224682770",
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 03:23:48] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 03:23:48] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 03:37:37] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"cc5bac38-efe8-46ed-95a1-42d44c127755\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 03:37:37\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Daniel Soares Santos\",\"email\":\"clienteteste@gmail.com\",\"phone\":\"11999999999\",\"document\":\"06446139128\",\"country\":\"BR\",\"ip\":\"181.225.165.142\"},\"products\":[{\"id\":\"PROD_6932538125fb4\",\"name\":\"Produto 24.5\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2450}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2450,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2450},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 03:37:37] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "cc5bac38-efe8-46ed-95a1-42d44c127755",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 03:37:37",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Daniel Soares Santos",
+        "email": "clienteteste@gmail.com",
+        "phone": "11999999999",
+        "document": "06446139128",
+        "country": "BR",
+        "ip": "181.225.165.142"
+    },
+    "products": [
+        {
+            "id": "PROD_6932538125fb4",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 03:37:37] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "cc5bac38-efe8-46ed-95a1-42d44c127755",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 03:37:37",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Daniel Soares Santos",
+        "email": "clienteteste@gmail.com",
+        "phone": null,
+        "document": "06446139128",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_6932538125fb4",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 03:37:37] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 03:37:37] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 04:38:39] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"6528cdde-deee-4e7e-9cdd-de4f54724691\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 04:38:39\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Patricia Santos Rodrigues\",\"email\":\"patricia.santos.rodrigues@icloud.com\",\"phone\":\"9190889982\",\"document\":\"56851716925\",\"country\":\"BR\",\"ip\":\"139.5.242.245\"},\"products\":[{\"id\":\"PROD_693261cf8d496\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 04:38:39] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "6528cdde-deee-4e7e-9cdd-de4f54724691",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 04:38:39",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Patricia Santos Rodrigues",
+        "email": "patricia.santos.rodrigues@icloud.com",
+        "phone": "9190889982",
+        "document": "56851716925",
+        "country": "BR",
+        "ip": "139.5.242.245"
+    },
+    "products": [
+        {
+            "id": "PROD_693261cf8d496",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 04:38:39] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "6528cdde-deee-4e7e-9cdd-de4f54724691",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 04:38:39",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Patricia Santos Rodrigues",
+        "email": "patricia.santos.rodrigues@icloud.com",
+        "phone": null,
+        "document": "56851716925",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_693261cf8d496",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 04:38:39] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 04:39:02] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"a9510675-f27d-4503-a585-9c656b7924db\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 04:39:02\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Alice Ribeiro Rodrigues\",\"email\":\"clienteteste@gmail.com\",\"phone\":\"11999999999\",\"document\":\"88392889452\",\"country\":\"BR\",\"ip\":\"109.164.52.240\"},\"products\":[{\"id\":\"PROD_693261e63043a\",\"name\":\"Produto 24.5\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2450}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2450,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2450},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 04:39:02] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "a9510675-f27d-4503-a585-9c656b7924db",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 04:39:02",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Alice Ribeiro Rodrigues",
+        "email": "clienteteste@gmail.com",
+        "phone": "11999999999",
+        "document": "88392889452",
+        "country": "BR",
+        "ip": "109.164.52.240"
+    },
+    "products": [
+        {
+            "id": "PROD_693261e63043a",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 04:39:02] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "a9510675-f27d-4503-a585-9c656b7924db",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 04:39:02",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Alice Ribeiro Rodrigues",
+        "email": "clienteteste@gmail.com",
+        "phone": null,
+        "document": "88392889452",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_693261e63043a",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 04:39:02] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 04:39:02] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 05:32:21] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"da9a16b7-3e5b-4d53-a347-6c63c767ce2a\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 05:32:21\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Ana Rodrigues Santos\",\"email\":\"ana.rodrigues.santos@hotmail.com\",\"phone\":\"3198468617\",\"document\":\"66812275549\",\"country\":\"BR\",\"ip\":\"14.163.81.38\"},\"products\":[{\"id\":\"PROD_69326e6537332\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 05:32:21] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "da9a16b7-3e5b-4d53-a347-6c63c767ce2a",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 05:32:21",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Ana Rodrigues Santos",
+        "email": "ana.rodrigues.santos@hotmail.com",
+        "phone": "3198468617",
+        "document": "66812275549",
+        "country": "BR",
+        "ip": "14.163.81.38"
+    },
+    "products": [
+        {
+            "id": "PROD_69326e6537332",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 05:32:21] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "da9a16b7-3e5b-4d53-a347-6c63c767ce2a",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 05:32:21",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Ana Rodrigues Santos",
+        "email": "ana.rodrigues.santos@hotmail.com",
+        "phone": null,
+        "document": "66812275549",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69326e6537332",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 05:32:21] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 05:32:21] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 06:25:06] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"9b01424b-2e24-46f4-9ee1-fa298d3a0894\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 06:25:06\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Matheus Ribeiro Ferreira\",\"email\":\"clienteteste@gmail.com\",\"phone\":\"11999999999\",\"document\":\"35739155070\",\"country\":\"BR\",\"ip\":\"177.6.189.169\"},\"products\":[{\"id\":\"PROD_69327ac2663ba\",\"name\":\"Produto 24.5\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2450}],\"trackingParameters\":[],\"commission\":{\"totalPriceInCents\":2450,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2450},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 06:25:06] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "9b01424b-2e24-46f4-9ee1-fa298d3a0894",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 06:25:06",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Matheus Ribeiro Ferreira",
+        "email": "clienteteste@gmail.com",
+        "phone": "11999999999",
+        "document": "35739155070",
+        "country": "BR",
+        "ip": "177.6.189.169"
+    },
+    "products": [
+        {
+            "id": "PROD_69327ac2663ba",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": [],
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 06:25:06] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "9b01424b-2e24-46f4-9ee1-fa298d3a0894",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 06:25:06",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Matheus Ribeiro Ferreira",
+        "email": "clienteteste@gmail.com",
+        "phone": null,
+        "document": "35739155070",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69327ac2663ba",
+            "name": "Produto 24.5",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2450
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null,
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2450,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2450
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 06:25:06] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 06:25:06] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
+[2025-12-05 06:27:13] 📥 Dados recebidos do PayHubr
+Dados: {
+    "raw": "{\"orderId\":\"4a689e88-091d-4eb8-b7b0-15acae2c8c41\",\"platform\":\"MinhaPlataforma\",\"paymentMethod\":\"pix\",\"status\":\"waiting_payment\",\"createdAt\":\"2025-12-05 06:27:13\",\"approvedDate\":null,\"refundedAt\":null,\"customer\":{\"name\":\"Silvana Guardino\",\"email\":\"silvana.guardino@hotmail.com\",\"phone\":\"9198511783\",\"document\":\"15744324860\",\"country\":\"BR\",\"ip\":\"2a02:26f7:e514:4000:c000::12\"},\"products\":[{\"id\":\"PROD_69327b4121d1f\",\"name\":\"Produto 21.67\",\"planId\":null,\"planName\":null,\"quantity\":1,\"priceInCents\":2167}],\"trackingParameters\":{\"utm_source\":\"tiktok\",\"utm_medium\":\"Ad%20group%2020251203040402|1850530554932257\",\"utm_campaign\":\"%5BCTV1%20L4%5D|1850530554932241\",\"utm_content\":\"Ad%20name2025-12-03%2016%3A06%3A04_002|1850530859939954\",\"utm_term\":\"TikTok\"},\"commission\":{\"totalPriceInCents\":2167,\"gatewayFeeInCents\":0,\"userCommissionInCents\":2167},\"isTest\":false}"
+}
+----------------------------------------
+[2025-12-05 06:27:13] 🔄 Processando dados recebidos
+Dados: {
+    "orderId": "4a689e88-091d-4eb8-b7b0-15acae2c8c41",
+    "platform": "MinhaPlataforma",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 06:27:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Silvana Guardino",
+        "email": "silvana.guardino@hotmail.com",
+        "phone": "9198511783",
+        "document": "15744324860",
+        "country": "BR",
+        "ip": "2a02:26f7:e514:4000:c000::12"
+    },
+    "products": [
+        {
+            "id": "PROD_69327b4121d1f",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "utm_source": "tiktok",
+        "utm_medium": "Ad%20group%2020251203040402|1850530554932257",
+        "utm_campaign": "%5BCTV1%20L4%5D|1850530554932241",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_002|1850530859939954",
+        "utm_term": "TikTok"
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 06:27:13] 📤 Dados formatados para Utmify
+Dados: {
+    "orderId": "4a689e88-091d-4eb8-b7b0-15acae2c8c41",
+    "platform": "PayHubr",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2025-12-05 06:27:13",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Silvana Guardino",
+        "email": "silvana.guardino@hotmail.com",
+        "phone": null,
+        "document": "15744324860",
+        "country": "BR",
+        "ip": "2a02:4780:13:1234::6b"
+    },
+    "products": [
+        {
+            "id": "PROD_69327b4121d1f",
+            "name": "Produto 21.67",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2167
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": "tiktok",
+        "utm_campaign": "%5BCTV1%20L4%5D|1850530554932241",
+        "utm_medium": "Ad%20group%2020251203040402|1850530554932257",
+        "utm_content": "Ad%20name2025-12-03%2016%3A06%3A04_002|1850530859939954",
+        "utm_term": "TikTok",
+        "xcod": null,
+        "fbclid": null,
+        "gclid": null,
+        "ttclid": null
+    },
+    "commission": {
+        "totalPriceInCents": 2167,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2167
+    },
+    "isTest": false
+}
+----------------------------------------
+[2025-12-05 06:27:13] 📡 Enviando requisição para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "headers": [
+        "Content-Type: application\/json",
+        "x-api-token: [REDACTED]"
+    ]
+}
+----------------------------------------
+[2025-12-05 06:27:13] ✅ Resposta da API Utmify
+Dados: {
+    "http_code": 200,
+    "response": {
+        "OK": true,
+        "data": [],
+        "result": "SUCCESS"
+    }
+}
+----------------------------------------
